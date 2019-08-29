@@ -5,6 +5,7 @@ const weatherReport = require("./utils/weather");
 const path = require("path");
 
 const publicViewPath = path.join(__dirname, "../public");
+const port = process.env.PORT || 3000;
 
 app.set("view engine", "hbs");
 
@@ -49,6 +50,6 @@ app.get("/weather", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("Server up !!!");
 });

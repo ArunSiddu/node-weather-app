@@ -13,7 +13,7 @@ weatherForm.addEventListener("submit", e => {
   msgTwo.textContent = "";
   const searchText = document.querySelector("input");
   const address = searchText.value;
-  fetch("http://localhost:3000/weather?address=" + address).then(response => {
+  fetch("/weather?address=" + address).then(response => {
     response.json().then(data => {
       console.log("response", data);
       if (data.error) {
