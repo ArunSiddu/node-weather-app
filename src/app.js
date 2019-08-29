@@ -34,13 +34,14 @@ app.get("/weather", (req, res) => {
       weatherReport(
         center[1],
         center[0],
-        (error, { temperature, precipProbability } = {}) => {
+        (error, { temperature, precipProbability }, { summary } = {}) => {
           if (error) {
             return console.log("Error : ", error);
             res.send({ error });
           }
           res.send({
             location: place_name,
+            summary,
             temperature,
             precipProbability
           });

@@ -28,7 +28,7 @@ const weatherReport = (long, lat, callback) => {
     } else if (body.error) {
       callback("Unnable to find location", undefined);
     } else {
-      callback(undefined, body.currently);
+      callback(undefined, body.currently, body.daily.data[0]);
     }
   });
 };
